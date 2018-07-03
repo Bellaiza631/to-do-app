@@ -1,6 +1,7 @@
 //DOM Select the elements
 function onReady(){
   const addToDoForm = document.getElementById('addToDoForm');
+  const deleteToDoForm = document.getElementById('deleteToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
@@ -31,11 +32,17 @@ function onReady(){
 
     //empty the input
     newToDoText.value = '';
+
   });
-}
 
-function deleteItem (){
+  addToDoForm.addEventListener('delete', event => {
+    event.preventDefault();
 
+    newLi.removeChild(checkbox);
+
+    toDoList.removeChild(newLi);
+
+    });
 
 }
 
@@ -44,5 +51,4 @@ function deleteItem (){
 window.onload = function() {
    alert("The window has loaded!");
    onReady();
-   deleteItem();
  };
