@@ -35,16 +35,17 @@ function onReady(){
 
   });
 
-    deleteToDoForm.addEventListener('delete', event => {
+    deleteToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
+    toDoList.childNodes.forEach ((item) => {
+      var newLi = item;
+      if(newLi.querySelector = true){
+        toDoList.removeChild(newLi);
+      }
+    })
 
-    newLi.removeChild(checkbox);
-
-    toDoList.removeChild(newLi);
-
-
-    });
+  });
 
 }
 
