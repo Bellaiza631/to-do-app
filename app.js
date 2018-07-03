@@ -35,12 +35,14 @@ function onReady(){
 
   });
 
-  addToDoForm.addEventListener('delete', event => {
+    deleteToDoForm.addEventListener('delete', event => {
     event.preventDefault();
+
 
     newLi.removeChild(checkbox);
 
     toDoList.removeChild(newLi);
+
 
     });
 
