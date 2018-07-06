@@ -18,17 +18,6 @@ function onReady(){
     let checkbox = document.createElement('input');
 
     let deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    document.body.appendChild(deleteBtn);
-
-    deleteBtn.addEventListener('click', function(event){
-
-        toDoList.removeChild(newLi);
-        checkbox.remove(checkbox);
-        deleteBtn.removeChild(deleteBtn.childNodes[0]);
-
-
-    });
 
     // set the input's type to checkbox
     checkbox.type = "checkbox";
@@ -45,9 +34,17 @@ function onReady(){
     //empty the input
     newToDoText.value = '';
 
+    deleteBtn.textContent = 'Delete';
+    newLi.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', function(event){
+      if (checkbox.type === 'checkbox' && checkbox.checked) {
+        toDoList.removeChild(newLi);
+      }
+
+    });
+
   });
-
-
 
 }
 
